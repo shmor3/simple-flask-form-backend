@@ -8,6 +8,7 @@ services:
     command: bash -c "python3 server.py"
     volumes:
       - ./new-messages:/new-messages:w
+      - ./messages.db:/messages.db:rw
   proxy:
     build: .
     ports:
