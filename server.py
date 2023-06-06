@@ -10,7 +10,9 @@ app = Flask(__name__)
 secret_key = os.urandom(24).hex()
 app.config['SECRET_KEY'] = secret_key
 
-
+@app.route('/')
+def index():
+    return 'Form Submition API'
 @app.route('/$<a>', methods=('GET', 'POST'))
 def formSubmition(a):
     connection = sqlite3.connect("messages.db")
