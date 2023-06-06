@@ -8,3 +8,9 @@ services:
     command: bash -c "python3 server.py"
     volumes:
       - ./new-messages:/new-messages:w
+  proxy:
+    build: .
+    ports:
+      - "5000:5000"
+    restart: always
+    command: bash -c "python3 proxy.py"
