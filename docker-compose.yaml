@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  formapi:
+    build: .
+    ports:
+      - "9387:9387"
+    restart: always
+    command: bash -c "python3 server.py"
+    volumes:
+      - ./new-messages:/new-messages:w

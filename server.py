@@ -1,7 +1,6 @@
 from flask import Flask, request, redirect
 import os
 import sqlite3
-import shutil
 import cryptocode
 import random
 import string
@@ -30,7 +29,7 @@ def formSubmition(a):
                 cursor.execute("INSERT INTO messages VALUES ('" + messageId +
                                "', '" + cryptocode.encrypt(str(message), '0000') + "')")
                 connection.commit()
-                with open('new.messages', 'a') as file:
+                with open('new-messages', 'a') as file:
                     file.write(messageId + '\n')
                 print(messageId + ': ' + str(message))
             except:
