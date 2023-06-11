@@ -12,7 +12,7 @@ app.config['SECRET_KEY'] = secret_key
 
 @app.route('/')
 def index():
-    return 'Form Submition API'
+    return 'Form Submission API'
 @app.route('/$<a>', methods=('GET', 'POST'))
 def formSubmition(a):
     connection = sqlite3.connect("messages.db")
